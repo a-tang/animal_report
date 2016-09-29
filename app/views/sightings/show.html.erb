@@ -1,0 +1,7 @@
+<header><h1 class="display-4"><%= @sighting.animal %></h1></header>
+<p><strong>Description:</strong> <%= @sighting.description %> </p>
+<p><strong>Submited by:</strong> <%= @sighting.submited_by %> </p>
+
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@sighting.latitude},#{@sighting.longitude}&markers=#{@sighting.latitude},#{@sighting.longitude}&zoom=15&size=640x400&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8", class: 'img-fluid img-rounded', alt: "#{@sighting.animal} on the map"%>
+
+<%= link_to "Delete", sighting_path(@sighting), method: :delete, data: {confirm: "Are you sure"} %>

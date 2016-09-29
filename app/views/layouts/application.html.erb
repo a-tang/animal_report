@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AnimalReport</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <style>
+  html, body {
+    height: 100%;
+    }
+    #map {
+    height: 100%;
+    width: 100%;
+  }
+  #new_sighting {
+    width: 100%;
+  }
+  #main-page {
+    height: 100%;
+    display: flex;
+  }
+  #forms {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPJzieCotJlivRwXJxVJgxgvQCxAznBA&callback=initMap">
+</script>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

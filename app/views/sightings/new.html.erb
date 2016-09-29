@@ -1,0 +1,15 @@
+<header><h1 class="display-4">Animal Reports</h1></header>
+<div id="main-page">
+  <div id="map"></div>
+  <div id="forms">
+    <%= render 'form' %>
+    <div>
+      <%= link_to 'Add place', new_sighting_path, class: 'btn btn-primary btn-lg' %>
+      <div>
+        <ul>
+          <%= render @sightings %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
