@@ -1,91 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AnimalReport</title>
+  <title>Animal Spotter</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <style>
-  html, body {
-    height: 90%;
-    }
-    #map {
-    height: 100%;
-    width: 100%;
-  }
-  #new_sighting {
-    width: 100%;
-  }
-  #main-page {
-    height: 100%;
-    display: flex;
-  }
-  #forms {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  .alert {
-  margin-bottom: 0px;
-}
-#notice_wrapper {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 999;
-    background-color:rgba(135, 216, 211, 0.85);
-}
-.alert, .notice {
-    padding: 1.75rem 0;
-    text-align: center;
-    margin: 0;
-    font-size: 1.3rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #ffffff
-}
-
-</style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 </head>
 <body>
-
-  <div class="container">
+  <div class="header">
+    <div class="flex-item">
+      <h1 class="display-4">Animal Spotter</h1>
+    </div>
+      <div class="flex-item">
     <% if user_signed_in? %>
     Hello <%= current_user.first_name %>,
-      <%= link_to "Log out", sessions_path, method: :delete %>
+    <%= link_to "Log out", sessions_path, method: :delete %>
     <% else %>
-      <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Sign Up", new_user_path %>
     <% end %>
-      <%= link_to "Home", new_sighting_path %>
-
-      <% if notice %>
-        <div id="notice_wrapper">
-            <div class="notice"><%= notice %></div>
-        </div>
-      <% elsif alert %>
-        <div id="notice_wrapper">
-            <div class="notice"><%= alert %></div>
-        </div>
-      <% end %>
+    <%= link_to "Home", new_sighting_path %>
   </div>
-    <%= yield %>
+</div>
+
+  <%= yield %>
+  <% if notice %>
+  <div id="notice_wrapper">
+    <div class="notice"><%= notice %></div>
+  </div>
+  <% elsif alert %>
+  <div id="notice_wrapper">
+    <div class="notice"><%= alert %></div>
+  </div>
+  <% end %>
+
   <%= render 'sessions/new' %>
   <%if !user_signed_in? %>
     <script>
       $('#modal1').openModal();
     </script>
   <%end%>
-
-<script async defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPJzieCotJlivRwXJxVJgxgvQCxAznBA&callback=initMap">
-</script>
-
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKPJzieCotJlivRwXJxVJgxgvQCxAznBA&callback=initMap">
+  </script>
 </body>
 </html>

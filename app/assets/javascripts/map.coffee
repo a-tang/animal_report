@@ -16,7 +16,6 @@ jQuery ->
         $('#sighting_latitude').attr("value",e.latLng.lat())
         $('#sighting_longitude').attr("value",e.latLng.lng())
 
-
       $('#find-on-map').click (e) ->
         e.preventDefault()
         placeMarkerAndPanTo {
@@ -29,7 +28,6 @@ jQuery ->
     marker = new google.maps.Marker
       position: latLng
       map: map
-
     map.panTo latLng
     markersArray.push marker
 

@@ -1,36 +1,26 @@
 <%= form_for @sighting, remote: true do |f| %>
-  <fieldset class="form-group-1">
-    <%= f.label :animal %>
-    <%= f.text_field :animal, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
-  </fieldset>
+<fieldset class="form-group-1">
+  <%= f.label :animal_spotted %>
+  <%= f.text_field :animal, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
+</fieldset>
 
-  <fieldset class="form-control-1">
-    <%= f.label :description %>
-    <%= f.text_field :description, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
-  </fieldset>
+<fieldset class="form-control-1">
+  <%= f.label :description %>
+  <%= f.text_field :description, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
+</fieldset>
 
-  <fieldset class="form-control-1">
-    <%= f.label :submited_by %>
-    <%= f.text_field :submited_by, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
-  </fieldset>
+<fieldset class="form-control-1">
+  <%= f.label :submited_by %>
+  <%= f.text_field :submited_by, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
+</fieldset>
 
-  <h4>Enter either address or coordinates</h4>
-  <fieldset class="form-control-1">
-    <%= f.label :raw_address, 'Address' %>
-    <%= f.text_field :raw_address, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
-    <small class="text-muted">You can also enter IP. Your IP is <%= request.ip %></small>
-  </fieldset>
-
-  <div class="form-group row">
-    <div class="col-sm-3">
-      <%= f.text_field :latitude, class: "form-control"%>
-    </div>
-
-    <div class="col-sm-3">
-      <%= f.text_field :longitude, class: "form-control" %>
-    </div>
-
+<div class="form-group row">
+  <div class="col-sm-3">
+    <%= f.text_field :latitude, class: "form-control", hidden:true %>
   </div>
-
-  <%= f.submit 'Add!', class: 'btn btn-primary'  %>
+  <div class="col-sm-3">
+    <%= f.text_field :longitude, class: "form-control", hidden:true %>
+  </div>
+</div>
+<%= f.submit 'Add!', class: 'btn btn-primary'  %>
 <% end %>
