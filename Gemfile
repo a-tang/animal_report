@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "rails_12factor", group: :production
 gem 'omniauth-twitter'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'puma'
