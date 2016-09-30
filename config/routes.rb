@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :sightings, only: [:new, :show, :index, :create, :edit, :destroy]
+  resources :sightings
   root 'sightings#new'
 
   resources :users, only: [:new, :create]
