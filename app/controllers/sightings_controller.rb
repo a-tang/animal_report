@@ -1,5 +1,5 @@
 class SightingsController < ApplicationController
-
+  before_action :find_sighting, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
   def show
@@ -13,6 +13,7 @@ class SightingsController < ApplicationController
   def new
     @sighting = Sighting.new
     @sightings = Sighting.order('created_at DESC')
+
   end
 
   def destroy
@@ -43,6 +44,10 @@ class SightingsController < ApplicationController
 
     def sighting
       @sighting ||= Sighting.find(params[:id])
+    end
+
+    def find_sighting
+        @sighting = Sighting.find params[:id]
     end
 
   end
