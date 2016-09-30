@@ -5,9 +5,11 @@
     <%= render 'form' %>
     <div>
       <%= link_to 'Add place', new_sighting_path, class: 'btn btn-primary btn-lg' %>
-      <div>
+      <div class="animal_report">
         <ul>
-          <%= render @sightings %>
+          <% @sightings.each do |s| %>
+            <%= render "/sightings/sighting", sighting: s %>
+          <% end %>
         </ul>
       </div>
     </div>

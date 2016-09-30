@@ -1,5 +1,5 @@
 class Sighting < ActiveRecord::Base
-
+  belongs_to :user
   attr_accessor :raw_address
 
   geocoded_by :address

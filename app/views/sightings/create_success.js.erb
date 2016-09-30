@@ -1,0 +1,3 @@
+$(".animal_report ul").prepend("<%= j render 'sightings/sighting', sighting: @sighting, style: 'display: none' %>");
+$("#new_sighting").html("<%= j render 'sightings/form', sighting: Sighting.new %>");
+$("#<%= dom_id(@answer) %>").fadeIn(1000).slideDown(9000);

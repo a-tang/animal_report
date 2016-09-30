@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
   resources :sightings, only: [:new, :show, :index, :create, :edit, :destroy]
-  root 'new_sighting_path#index'
+  root 'sightings#new'
 
   resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create] do
+    delete :destroy, on: :collection
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
