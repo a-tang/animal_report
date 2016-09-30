@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to root_path, alert: "You're already liked!" }
+        format.html { redirect_to root_path, alert: "You're already Welcome!" }
         format.js   { render js: "alert('Can\'t like, please refresh the page!');" }
       end
     end
