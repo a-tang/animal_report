@@ -1,23 +1,23 @@
 <%= form_for @sighting, remote: true do |f| %>
-  <fieldset class="form-group">
+  <fieldset class="form-group-1">
     <%= f.label :animal %>
-    <%= f.text_field :animal, class: "form-control", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
+    <%= f.text_field :animal, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
   </fieldset>
 
-  <fieldset class="form-group">
+  <fieldset class="form-control-1">
     <%= f.label :description %>
-    <%= f.text_field :description, class: "form-control", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
+    <%= f.text_field :description, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
   </fieldset>
 
-  <fieldset class="form-group">
+  <fieldset class="form-control-1">
     <%= f.label :submited_by %>
-    <%= f.text_field :submited_by, class: "form-control", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
+    <%= f.text_field :submited_by, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
   </fieldset>
 
   <h4>Enter either address or coordinates</h4>
-  <fieldset class="form-group">
+  <fieldset class="form-control-1">
     <%= f.label :raw_address, 'Address' %>
-    <%= f.text_field :raw_address, class: "form-control", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
+    <%= f.text_field :raw_address, class: "form-control-1", autofocus: true, 'data-behavior' => 'submit_on_enter' %>
     <small class="text-muted">You can also enter IP. Your IP is <%= request.ip %></small>
   </fieldset>
 

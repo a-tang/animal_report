@@ -1,3 +1,3 @@
 $("#animal_report").prepend("<%= j(render( '/sightings/sighting', sighting: @sighting, style: 'display: none')) %>");
-$(".form-control").val('');
+$(".form-control-1").val('');
 $("#forms").reset("<%= j render(partial: 'form', sighting: Sighting.new ) %>");

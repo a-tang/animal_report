@@ -19,5 +19,6 @@ $(document).ready(function() {
         $('#notice_wrapper').fadeOut('slow', function() {
             $(this).remove();
         })
-    }, 4500);
+    }, 3500);
+
 });
