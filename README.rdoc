@@ -1,28 +1,15 @@
-== README
+A little fun exercise I completed in 48hrs for a job interview.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a 'single page' web application that consists of a front-end and back-end architecture.'
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Technologies used:
+- Ruby on Rails,
+- Google API
+- jQuery,
+- Javascript, 
+- SCSS, 
+- HTML, 
+- Github, 
+- and deployed on Heroku. 
+ 
+ https://animal-spotter.herokuapp.com
